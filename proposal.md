@@ -1,20 +1,13 @@
-Name: ____________           ID:   ____________
+Name: Jonathan Feierabend           ID:   46832192
 
 ## Proposed Project
 
-> Replace this paragraph with the description of what your project
-> will do. Tell me what kind of interface it will have, and roughly
-> how it will work. I don't need more than three or four sentences,
-> unless you feel compelled to write more.
+My project will be simulating the Monty Hall Paradox. The application will
+have a console interface. It will simulate 500,000 times. It will return
+the probability of staying vs. the probability of switching.
 
 ## Outline Structure
 
-> Describe how you'll organize your code. What is the process and
-> supervision structure? If it uses a framework, how does it fit in. I
-> just need to understand the direction you plan to take. Again, three
-> or four sentences are probably enough.
-
-
-
-> replace all the ">" lines with your content, then push this to
-> github and issue a merge request.
+Top-Level Supervisor manages the state and a second supervisor. The second supervisor
+manages the GenServers that generate the simulations. If time permits, I will
+implement a Phoenix framework to interface with the application.
