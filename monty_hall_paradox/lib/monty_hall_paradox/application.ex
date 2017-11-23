@@ -6,7 +6,7 @@ defmodule Mhp.Application do
 
     children = [
       worker(Mhp.State, arg),
-      worker(Mhp.Supervisor, arg)
+      supervisor(Mhp.Supervisor, arg)
     ]
 
     opts = [strategy: :one_for_one, name: Mhp.Supervisor]
@@ -14,3 +14,6 @@ defmodule Mhp.Application do
   end
 
 end
+
+
+

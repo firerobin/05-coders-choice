@@ -4,8 +4,9 @@ defmodule Mhp do
   alias Mhp.Server
   
   defdelegate new_game(),                     to: Supervisor
-  defdelegate select_door(game, number),      to: Server
-  defdelegate stay_or_switch?(game, answer),  to: Server
-  defdelegate result(),                       to: Server
+  defdelegate sim_game(),                     to: Supervisor
+  defdelegate select_door(game, number),      to: Api
+  defdelegate stay_or_switch?(game, choice),  to: Api
+  defdelegate tally(game),                    to: Api
 
 end
