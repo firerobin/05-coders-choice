@@ -5,8 +5,8 @@ defmodule Mhp.Application do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(Mhp.State, arg),
-      supervisor(Mhp.Supervisor, arg)
+      worker(Mhp.State, []),
+      supervisor(Mhp.Supervisor, [])
     ]
 
     opts = [strategy: :one_for_one, name: Mhp.Supervisor]
@@ -14,6 +14,3 @@ defmodule Mhp.Application do
   end
 
 end
-
-
-
