@@ -9,11 +9,11 @@ defmodule Mhp.Impl do
     |> new_game(Enum.random(0..2))
   end
   
-#  def sim_game() do
-#    Mhp.new_game()
-#    |> select_door(Enum.random(0..2))
-#    |> Mhp.stay_or_switch?(Enum.random(0..1))
-#  end
+  def sim_game() do
+    new_game()
+    |> select_door(Enum.random(0..2))
+    |> stay_or_switch?(Enum.random(0..1))
+  end
     
   def tally(%Mhp.State{} = game) do
     Map.drop(game, [:doors])
@@ -65,22 +65,18 @@ defmodule Mhp.Impl do
   
   defp result(%Mhp.State{stay_or_switch?: :stay} = game, :car) do
     %Mhp.State{ game | state: :won }
-#      state: :won, games_won_stay: game.games_won_stay + 1 }
   end
   
   defp result(%Mhp.State{stay_or_switch?: :switch} = game, :car) do
     %Mhp.State{ game | state: :won }
-#      state: :won, games_won_switch: game.games_won_switch + 1 }
   end
   
   defp result(%Mhp.State{stay_or_switch?: :stay} = game, :goat) do
     %Mhp.State{ game | state: :lost }
-#      state: :lost, games_lost_stay: game.games_lost_stay + 1 }
   end
   
   defp result(%Mhp.State{stay_or_switch?: :switch} = game, :goat) do
     %Mhp.State{ game | state: :lost }
-#      state: :lost, games_lost_switch: game.games_lost_switch + 1 }
   end
 
 end
